@@ -1,15 +1,15 @@
 {
   "manifest_version": 3,
-  "name": "infsci-2140-final-chrome-extension",
-  "short_name": "infsci-2140-final-chrome-extension",
+  "name": "Pitt Grad Gatherer",
+  "short_name": "pitt-grad-gatherer",
   "version": "1.0.0",
-  "description": "Generated with @larscom/ng-chrome-extension",
+  "description": "An extension that lets Pitt students submit (and discover) events for grad students on campus.",
   "permissions": [
     "tabs"
   ],
   "action": {
     "default_popup": "index.html?#/popup",
-    "default_title": "Angular Chrome Extension"
+    "default_title": "Pitt Grad Gatherer"
   },
   "options_page": "index.html?#/options",
   "content_scripts": [

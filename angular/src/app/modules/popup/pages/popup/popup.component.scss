@@ -1,0 +1,16 @@
+.component-popup {
+    width: 400px;
+
+    .content {
+        padding: 1rem;
+    }
+
+    form {
+        margin: 1rem 0;
+        width: 100%;
+
+        input { 
+            width: 100%
+        }
+    }
+}

@@ -1,7 +1,42 @@
-<h1>Popup</h1>
-<p>You can easily send messages from the popup to the content page with the provided Tab ID!
-  (tabId=<strong>{{ tabId }}</strong>)</p>
+<div class="component-popup">
+  <mat-toolbar>
+    <button mat-icon-button aria-label="Menu icon button">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>Grad Gatherer</span>
+  </mat-toolbar>
 
-<button (click)="onClick()">Click me to test</button>
-
-<p><strong>{{ message }}</strong></p>
+  <div class="content">
+    <form>
+      <mat-form-field appearance="fill">
+        <mat-label>Event name</mat-label>
+        <input matInput>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Starts on</mat-label>
+        <input matInput [matDatepicker]="startPicker">
+        <mat-datepicker-toggle matSuffix [for]="startPicker"></mat-datepicker-toggle>
+        <mat-datepicker #startPicker></mat-datepicker>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Ends on</mat-label>
+        <input matInput [matDatepicker]="endPicker">
+        <mat-datepicker-toggle matSuffix [for]="endPicker"></mat-datepicker-toggle>
+        <mat-datepicker #endPicker></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Description</mat-label>
+        <textarea matInput></textarea>
+      </mat-form-field>
+    </form>
+  </div>
+<!--   
+  <p>You can easily send messages from the popup to the content page with the provided Tab ID!
+    (tabId=<strong>{{ tabId }}</strong>)</p>
+  
+  <button mat-button (click)="onClick()">Click me to test</button>
+  
+  <p><strong>{{ message }}</strong></p>   -->
+</div>
