@@ -1,4 +1,4 @@
-# Grad Gatherer: a platform for discovering and submitting events for grad studets at Pitt
+# Gradlife: a platform for discovering and submitting events for grad studets at Pitt
 
 ## Ackowledgments
 
