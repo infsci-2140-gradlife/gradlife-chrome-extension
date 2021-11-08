@@ -10,25 +10,30 @@
     <form>
       <mat-form-field appearance="fill">
         <mat-label>Event name</mat-label>
-        <input matInput [(ngModel)]="name">
+        <input matInput [(ngModel)]="name" required>
       </mat-form-field>
 
       <mat-form-field appearance="fill">
         <mat-label>Location (URL or physical address)</mat-label>
-        <input matInput [(ngModel)]="location">
-      </mat-form-field>
-  
-      <mat-form-field appearance="fill">
-        <mat-label>Starts on</mat-label>
-        <input matInput [matDatepicker]="startPicker" [(ngModel)]="date">
-        <mat-datepicker-toggle matSuffix [for]="startPicker"></mat-datepicker-toggle>
-        <mat-datepicker #startPicker></mat-datepicker>
+        <input matInput [(ngModel)]="location" required>
       </mat-form-field>
 
-      <button mat-raised-button color="primary">Submit</button>
+      <mat-form-field appearance="fill">
+        <mat-label>Starts on</mat-label>
+        <input matInput [min]="MIN_DATE" [matDatepicker]="picker">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Description</mat-label>
+        <textarea matInput [(ngModel)]="description" rows="4"></textarea>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" (click)="sayHello()" [disabled]="!isValid()">SUBMIT</button>
     </form>
   </div>
-<!--   
+  <!--   
   <p>You can easily send messages from the popup to the content page with the provided Tab ID!
     (tabId=<strong>{{ tabId }}</strong>)</p>
   
