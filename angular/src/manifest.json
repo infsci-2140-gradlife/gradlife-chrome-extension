@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
-  "name": "Pitt Grad Gatherer",
-  "short_name": "pitt-grad-gatherer",
+  "name": "Gradlife",
+  "short_name": "gradlife",
   "version": "1.0.0",
   "description": "An extension that lets Pitt students submit (and discover) events for grad students on campus.",
   "permissions": [
@@ -9,7 +9,7 @@
   ],
   "action": {
     "default_popup": "index.html?#/popup",
-    "default_title": "Pitt Grad Gatherer"
+    "default_title": "Gradlife"
   },
   "options_page": "index.html?#/options",
   "content_scripts": [
