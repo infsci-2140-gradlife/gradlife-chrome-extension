@@ -34,7 +34,7 @@
 
       <button *ngIf="!isLoading" mat-raised-button color="primary" (click)="click()"
         [disabled]="!eventForm.valid">SUBMIT</button>
-      <button (click)="getHelp()">Email</button>
+      <button mat-flat-button (click)="getHelp()">Email us</button>
       <mat-progress-bar *ngIf="isLoading" mode="indeterminate"></mat-progress-bar>
     </form>
   </div>
