@@ -1,43 +1,41 @@
 <div class="component-popup">
-  <mat-toolbar>
-    <button mat-icon-button aria-label="Menu icon button">
-      <mat-icon>menu</mat-icon>
-    </button>
+  <mat-toolbar color="primary">
     <span>Gradlife</span>
   </mat-toolbar>
 
   <div class="content">
-    <form>
+    <form [formGroup]="eventForm">
       <mat-form-field appearance="fill">
         <mat-label>Event name</mat-label>
-        <input matInput [(ngModel)]="name" required>
-      </mat-form-field>
-
-      <mat-form-field appearance="fill">
-        <mat-label>Location (URL or physical address)</mat-label>
-        <input matInput [(ngModel)]="location" required>
+        <input matInput formControlName="name" required minlength="4" type="text">
       </mat-form-field>
 
       <mat-form-field appearance="fill">
         <mat-label>Starts on</mat-label>
-        <input matInput [min]="MIN_DATE" [matDatepicker]="picker">
+        <input matInput formControlName="date" [matDatepicker]="picker">
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
 
       <mat-form-field appearance="fill">
-        <mat-label>Description</mat-label>
-        <textarea matInput [(ngModel)]="description" rows="4"></textarea>
+        <mat-label>Start time</mat-label>
+        <input matInput formControlName="time" type="time">
       </mat-form-field>
 
-      <button mat-raised-button color="primary" (click)="sayHello()" [disabled]="!isValid()">SUBMIT</button>
+      <mat-form-field appearance="fill">
+        <mat-label>Location (URL or physical address)</mat-label>
+        <input matInput formControlName="location" type="text" required minlength="4">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Description</mat-label>
+        <textarea formControlName="description" matInput rows="4"></textarea>
+      </mat-form-field>
+
+      <button *ngIf="!isLoading" mat-raised-button color="primary" (click)="click()"
+        [disabled]="!eventForm.valid">SUBMIT</button>
+      <button (click)="getHelp()">Email</button>
+      <mat-progress-bar *ngIf="isLoading" mode="indeterminate"></mat-progress-bar>
     </form>
   </div>
-  <!--   
-  <p>You can easily send messages from the popup to the content page with the provided Tab ID!
-    (tabId=<strong>{{ tabId }}</strong>)</p>
-  
-  <button mat-button (click)="onClick()">Click me to test</button>
-  
-  <p><strong>{{ message }}</strong></p>   -->
 </div>

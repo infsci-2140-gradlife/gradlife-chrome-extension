@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { Event } from 'src/app/modules/popup/models/event';
 
 @Injectable({ providedIn: 'root' })
@@ -10,7 +10,7 @@ export class ApiService {
   constructor(private httpClient: HttpClient) { }
 
   public getHello() {
-    return this.httpClient.get(`${this.API_ROOT}helloFriend`);
+    return this.httpClient.get(`${this.API_ROOT}createEvent`);
   }
 
   public createEvent(event: Event): Observable<Object> {

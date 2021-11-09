@@ -2,5 +2,5 @@ export class Event {
     name: string;
     description?: string;
     location: string;
-    date: Date;
+    date = new Date(Date.now());
 }
